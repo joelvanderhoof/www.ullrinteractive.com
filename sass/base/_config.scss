@@ -1,0 +1,43 @@
+//## Colors
+
+$deep-sea: #072356;
+$pacific: #185984;
+$saltwater: #49aaba;
+$glacier: #9bd7dd;
+
+$stratus: #c6c6c6;
+
+$primary-color: $deep-sea;
+$accent-color: $saltwater;
+
+$body-color: $stratus;
+
+//## Timing functions for animations and transitions
+$default-cubic-bezier: cubic-bezier(0.3, 0.1, 0.05, 1) !default;
+
+@font-face {
+    font-family: 'Greycliff CF Regular';
+    src: url('../fonts/GreycliffCF-Regular.eot');
+    src: url('../fonts/GreycliffCF-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/GreycliffCF-Regular.woff2') format('woff2'),
+         url('../fonts/GreycliffCF-Regular.woff') format('woff'),
+         url('../fonts/GreycliffCF-Regular.ttf')  format('truetype')
+}
+
+@font-face {
+    font-family: 'Greycliff CF Demi Bold';
+    src: url('../fonts/GreycliffCF-DemiBold.eot');
+    src: url('../fonts/GreycliffCF-DemiBold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/GreycliffCF-DemiBold.woff2') format('woff2'),
+         url('../fonts/GreycliffCF-DemiBold.woff') format('woff'),
+         url('../fonts/GreycliffCF-DemiBold.ttf')  format('truetype')
+}
+
+@font-face {
+    font-family: 'Greycliff CF Bold';
+    src: url('../fonts/GreycliffCF-Bold.eot');
+    src: url('../fonts/GreycliffCF-Bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/GreycliffCF-Bold.woff2') format('woff2'),
+         url('../fonts/GreycliffCF-Bold.woff') format('woff'),
+         url('../fonts/GreycliffCF-Bold.ttf')  format('truetype')
+}

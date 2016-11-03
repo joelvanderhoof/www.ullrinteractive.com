@@ -1,0 +1,32 @@
+{
+  "name": "ullr",
+  "version": "1.0.0",
+  "description": "Ullr's marketing website.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eddy Tseng",
+  "license": "ISC",
+  "dependencies": {
+    "bower": "^1.7.9",
+    "browser-sync": "^2.14.0",
+    "del": "^2.2.2",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "^2.6.0",
+    "gulp-csscomb": "^3.0.7",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0",
+    "normalize": "^0.3.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.8.1",
+    "nodemon": "^1.11.0"
+  }
+}

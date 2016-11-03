@@ -1,0 +1,80 @@
+.hero-header {
+    @media only screen and (min-width: 768px) {
+        margin-top: 0;
+
+        transform: unset;
+        animation-name: fadeInUp;
+        animation-duration: 1.2s;
+
+        animation-fill-mode: forwards;
+    }
+    .inline-primary-mark {
+        display: none;
+        @media only screen and (min-width: 768px) {
+            display: inline-block;
+
+            height: 37px;
+
+            animation-name: fadeIn;
+            animation-duration: 1.4s;
+            animation-timing-function: $default-cubic-bezier;
+            animation-delay: 2s;
+
+            opacity: 0;
+
+            animation-fill-mode: forwards;
+        }
+        @media only screen and (min-width: 1440px) {
+            height: 55px;
+        }
+        img {
+            height: 100%;
+        }
+    }
+}
+
+.hero-subhead {
+    //position: absolute;
+    //bottom: 0;
+    //left: 74px;
+}
+
+.subhead-line {
+    @media only screen and (min-width: 768px) {
+        position: relative;
+
+        width: 42px;
+        height: 21px;
+        margin-right: 14px;
+
+        &:after {
+            position: absolute;
+            top: 50%;
+            left: 0;
+
+            width: 0;
+            height: 2px;
+
+            content: '';
+            animation-name: toFullWidth;
+            animation-duration: 0.4s;
+            animation-timing-function: $default-cubic-bezier;
+            animation-delay: 1s;
+
+            background-color: $accent-color;
+        }
+    }
+}
+
+.subhead.fadeInUp {
+    animation-duration: 1s;
+    animation-delay: 1.2s;
+
+    opacity: 0;
+}
+
+.subhead-line:after,
+.subhead,
+.inline-primary-mark {
+    animation-fill-mode: forwards;
+}

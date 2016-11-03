@@ -1,0 +1,106 @@
+@mixin greycliff-regular {
+    font-family: 'Greycliff CF Regular', sans-serif;
+}
+
+@mixin greycliff-demibold {
+    font-family: 'Greycliff CF Demi Bold', sans-serif;
+}
+
+@mixin greycliff-bold {
+    font-family: 'Greycliff CF Bold', sans-serif;
+}
+
+html,
+body {
+    @include greycliff-demibold;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    color: $body-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    font-style: normal;
+
+    margin-top: 0;
+}
+
+p,
+a {
+    font-size: 12px;
+
+    margin-top: 0;
+    @media only screen and (min-width: 768px) {
+        font-size: 14px;
+    }
+}
+
+a {
+    transition: color 0.5s;
+    text-decoration: none;
+
+    color: $body-color;
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+li {
+    list-style: none;
+}
+
+strong {
+    @include greycliff-bold;
+}
+
+.display-4 {
+    // Do something
+}
+
+.display-3 {
+    // Do something
+}
+
+.display-2 {
+    // Do something
+}
+
+.display-1 {
+    font-size: 24px;
+    line-height: 31.5px;
+
+    @media only screen and (min-width: 768px) {
+        font-size: 48px;
+        line-height: 57px;
+
+        margin-bottom: 17px;
+    }
+    @media only screen and (min-width: 1440px) {
+        font-size: 72px;
+        line-height: 87px;
+
+        margin-bottom: 18px;
+    }
+}
+
+.headline {
+    // Do something
+}
+
+.title {
+    // Do something
+}
+
+.subhead {
+    font-size: 14px;
+    line-height: 21px;
+
+    color: #49aaba;
+}
