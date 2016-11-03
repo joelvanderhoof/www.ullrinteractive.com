@@ -33,7 +33,7 @@ gulp.task('minifyScripts', ['concatScripts'], function() {
     return gulp.src('js/app.js')
         .pipe(uglify())
         .pipe(rename('app.min.js'))
-        .pipe(gulp.dest('js'))
+        .pipe(gulp.dest('./public/js'))
         .pipe(browserSync.stream());
 });
 
@@ -41,7 +41,7 @@ gulp.task('cleanCSS', ['compileSass'], function() {
     return gulp.src('style.css')
         .pipe(cleanCSS())
         .pipe(rename('style.min.css'))
-        .pipe(gulp.dest('styles'))
+        .pipe(gulp.dest('./public/styles'))
 });
 
 gulp.task('compileSass', function() {
@@ -49,7 +49,7 @@ gulp.task('compileSass', function() {
         .pipe(maps.init())
         .pipe(sass())
         .pipe(maps.write('./'))
-        .pipe(gulp.dest('styles'))
+        .pipe(gulp.dest('./public/styles'))
         .pipe(browserSync.stream());
 });
 
