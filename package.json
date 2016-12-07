@@ -21,6 +21,7 @@
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^2.0.0",
+    "nodemailer": "^2.6.4",
     "normalize": "^0.3.1"
   },
   "devDependencies": {
