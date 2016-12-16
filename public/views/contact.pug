@@ -1,0 +1,18 @@
+h1 Contact Form
+.content
+  form#contactus(action='/contact', name='contactus', method='post')
+    fieldset
+      p
+        label(for='name') Name:
+        br
+        input#name(name='name', type='text', value='')
+      p
+        label(for='email') Email:
+        br
+        input#email(name='email', type='text', value='')
+      p
+        label(for='message') Message:
+        br
+        textarea#message(name='message', cols='40', rows='10')
+      p
+        input#submit(name='submit', type='submit', value='Send')
