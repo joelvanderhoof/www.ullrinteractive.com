@@ -2,6 +2,7 @@
 
 var express = require('express');
 var nodemailer = require('nodemailer');
+var validator = require('email-validator');
 var bodyParser = require('body-parser'); //Parse request as a JSON object
 
 
@@ -25,32 +26,47 @@ router.get('/contact', function (req, res, next) {
 });
 
 router.post('/contact', urlencodedParser, function (req, res, next) {
-    //Create transport object for nodemailer to call the sendMail method on
-    var transporter = nodemailer.createTransport({
-        service: 'Gmail',
-        auth: {
-            user: 'joelvanderhoof@gmail.com',
-            pass: 'vivianle'
+    //Check for valid email    
+    var checkEmail = validator.validate(req.body.email);
+    //Check to see if a spambot filledout the otherEmail field
+    if (checkEmail && req.body.otherEmail == '') {
+        console.log('test passed');
+        //Create transport object for nodemailer to call the sendMail method on
+        var transporter = nodemailer.createTransport({
+            service: 'Gmail',
+            auth: {
+                user: 'joelvanderhoof@gmail.com',
+                pass: 'vivianle'
+            }
+        }),
+            mailOptions = {
+            from: req.body.email,
+            to: 'joelvanderhoof@gmail.com',
+            subject: 'hello',
+            text: req.body.message + '\r\n\r\nName: ' + req.body.name + '\r\nEmail: ' + req.body.email
+        };
+
+        transporter.sendMail(mailOptions, function (error, response) {
+        //Email not sent
+        if (error) {
+            console.log(error);
         }
-    }),
-        mailOptions = {
-        from: req.body.email,
-        to: 'joelvanderhoof@gmail.com',
-        subject: 'hello',
-        text: req.body.message + '\r\n\r\nName: ' + req.body.name + '\r\nEmail: ' + req.body.email
-    };
+        //Email sent
+        else {
+            console.log('email sent');
+            res.send('Sucess!');
+        }
+      });
+    } else {
+        //set the req.body from the earlier attempt to a var
+        var firstTry = req.body;
+        res.locals.name = firstTry.name;
+        res.locals.email = 'INVALID EMAIL';
+        res.locals.message = firstTry.message;
         
-    transporter.sendMail(mailOptions, function (error, response) {
-    //Email not sent
-    if (error) {
-        console.log(error);
+        //Redirect to /contact with forms filled out
+        res.render('contact.pug'); 
     }
-    //Email sent
-    else {
-        console.log('email sent');
-        res.render('contact.pug');
-    }
-  });
 });
 
 module.exports = router;
